@@ -2,3 +2,4 @@ test
 vendor
 composer.lock
 update.bat
+*.bak
