@@ -241,6 +241,11 @@ class PdfWatermarker implements Watermarker
         return $this->fpdi->Output($fileName, 'S');
     }
 
+    public function pixelsToMM($val)
+    {
+        return $val * self::MM_IN_INCH / self::DPI;
+    }
+
     /**
      * Scale the image to include it inside the container without warping.
      * @param $watermark watermark image of the Watermark class.
