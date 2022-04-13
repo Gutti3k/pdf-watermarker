@@ -1,12 +1,12 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Watermarkers;
+namespace Gutti3k\PdfWatermarker\Watermarkers;
 
-use gutti3k\PdfWatermarker\Support\Pdf;
-use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
-use gutti3k\PdfWatermarker\Watermarks\ImageWatermark;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidWatermarkFileException;
+use Gutti3k\PdfWatermarker\Support\Pdf;
+use Gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use Gutti3k\PdfWatermarker\Watermarks\ImageWatermark;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidWatermarkFileException;
 
 class ImageWatermarker extends BaseWatermarketer
 {

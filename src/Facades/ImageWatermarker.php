@@ -1,9 +1,9 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Facades;
+namespace Gutti3k\PdfWatermarker\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use gutti3k\PdfWatermarker\Watermarkers\ImageWatermarker as FacadeAccessor;
+use Gutti3k\PdfWatermarker\Watermarkers\ImageWatermarker as FacadeAccessor;
 
 /**
  * @method static \FilippoToso\PdfWatermarker\Watermarkers\ImageWatermarker output($filename)

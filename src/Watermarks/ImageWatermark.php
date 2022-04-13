@@ -1,8 +1,8 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Watermarks;
+namespace Gutti3k\PdfWatermarker\Watermarks;
 
-use gutti3k\PdfWatermarker\Contracts\Watermark;
+use Gutti3k\PdfWatermarker\Contracts\Watermark;
 
 class ImageWatermark implements Watermark
 {

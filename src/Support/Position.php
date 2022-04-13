@@ -1,6 +1,6 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Support;
+namespace Gutti3k\PdfWatermarker\Support;
 
 class Position
 {

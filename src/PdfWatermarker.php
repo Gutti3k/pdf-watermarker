@@ -1,12 +1,12 @@
 <?php
 
-namespace gutti3k\PdfWatermarker;
+namespace Gutti3k\PdfWatermarker;
 
 use setasign\Fpdi\Fpdi;
-use gutti3k\PdfWatermarker\Support\Pdf;
-use gutti3k\PdfWatermarker\Support\Position;
-use gutti3k\PdfWatermarker\Contracts\Watermark;
-use gutti3k\PdfWatermarker\Contracts\Watermarker;
+use Gutti3k\PdfWatermarker\Support\Pdf;
+use Gutti3k\PdfWatermarker\Support\Position;
+use Gutti3k\PdfWatermarker\Contracts\Watermark;
+use Gutti3k\PdfWatermarker\Contracts\Watermarker;
 
 class PdfWatermarker implements Watermarker
 {

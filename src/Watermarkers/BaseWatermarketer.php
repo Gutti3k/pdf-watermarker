@@ -1,11 +1,11 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Watermarkers;
+namespace Gutti3k\PdfWatermarker\Watermarkers;
 
-use gutti3k\PdfWatermarker\PdfWatermarker;
-use gutti3k\PdfWatermarker\Support\Position;
-use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidOutputFileException;
+use Gutti3k\PdfWatermarker\PdfWatermarker;
+use Gutti3k\PdfWatermarker\Support\Position;
+use Gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidOutputFileException;
 
 abstract class BaseWatermarketer
 {

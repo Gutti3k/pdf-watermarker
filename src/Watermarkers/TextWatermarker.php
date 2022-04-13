@@ -1,13 +1,13 @@
 <?php
 
-namespace gutti3k\PdfWatermarker\Watermarkers;
+namespace Gutti3k\PdfWatermarker\Watermarkers;
 
-use gutti3k\PdfWatermarker\Support\Pdf;
-use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
-use gutti3k\PdfWatermarker\Watermarks\TextWatermark;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidColorException;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidFontFileException;
-use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
+use Gutti3k\PdfWatermarker\Support\Pdf;
+use Gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use Gutti3k\PdfWatermarker\Watermarks\TextWatermark;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidColorException;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidFontFileException;
+use Gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
 
 class TextWatermarker extends BaseWatermarketer
 {
