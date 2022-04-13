@@ -1,13 +1,13 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarkers;
+namespace gutti3k\PdfWatermarker\Watermarkers;
 
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidColorException;
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidFontFileException;
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
-use FilippoToso\PdfWatermarker\Watermarks\TextWatermark;
-use FilippoToso\PdfWatermarker\PdfWatermarker as Watermarker;
-use FilippoToso\PdfWatermarker\Support\Pdf;
+use gutti3k\PdfWatermarker\Support\Pdf;
+use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use gutti3k\PdfWatermarker\Watermarks\TextWatermark;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidColorException;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidFontFileException;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
 
 class TextWatermarker extends BaseWatermarketer
 {
@@ -31,7 +31,7 @@ class TextWatermarker extends BaseWatermarketer
     }
 
     /**
-     * Set the TTF font path 
+     * Set the TTF font path
      *
      * @param string $font
      * @return ImageWatermarker
@@ -50,7 +50,7 @@ class TextWatermarker extends BaseWatermarketer
      */
     public function size($size)
     {
-        $this->size = (float)$size;
+        $this->size = (float) $size;
         return $this;
     }
 
@@ -62,7 +62,7 @@ class TextWatermarker extends BaseWatermarketer
      */
     public function angle($angle)
     {
-        $this->angle = (float)$angle;
+        $this->angle = (float) $angle;
         return $this;
     }
 

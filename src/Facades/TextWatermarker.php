@@ -1,9 +1,9 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Facades;
+namespace gutti3k\PdfWatermarker\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use FilippoToso\PdfWatermarker\Watermarkers\TextWatermarker as FacadeAccessor;
+use gutti3k\PdfWatermarker\Watermarkers\TextWatermarker as FacadeAccessor;
 
 /**
  * @method static \FilippoToso\PdfWatermarker\Watermarkers\TextWatermarker output($filename)

@@ -1,6 +1,6 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Support;
+namespace gutti3k\PdfWatermarker\Support;
 
 class Position
 {
@@ -79,9 +79,9 @@ class Position
      * @return string name
      */
     /*
-    public function __toString()
-    {
-        return sprintf('%s (%d / %d)'), $this->name, $this->offsetX, $offsetY);
-    }
-    // */
+public function __toString()
+{
+return sprintf('%s (%d / %d)'), $this->name, $this->offsetX, $offsetY);
+}
+// */
 }

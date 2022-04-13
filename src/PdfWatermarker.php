@@ -1,28 +1,29 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker;
+namespace gutti3k\PdfWatermarker;
 
 use setasign\Fpdi\Fpdi;
-use FilippoToso\PdfWatermarker\Contracts\Watermarker;
-use FilippoToso\PdfWatermarker\Contracts\Watermark;
-use FilippoToso\PdfWatermarker\Support\Pdf;
-use FilippoToso\PdfWatermarker\Support\Position;
+use gutti3k\PdfWatermarker\Support\Pdf;
+use gutti3k\PdfWatermarker\Support\Position;
+use gutti3k\PdfWatermarker\Contracts\Watermark;
+use gutti3k\PdfWatermarker\Contracts\Watermarker;
 
 class PdfWatermarker implements Watermarker
 {
-    protected const DEFAULT_RESOLUTION = 96;
+    protected const DPI = 96;
+    protected const MM_IN_INCH = 25.4;
 
     protected $watermark;
     protected $totalPages;
     protected $specificPages = [];
     protected $position;
     protected $asBackground = false;
-    protected $resolution = self::DEFAULT_RESOLUTION;
+    protected $resolution = self::DPI;
 
     /** @var Fpdi */
     protected $fpdi;
 
-    public function __construct(Pdf $file, Watermark $watermark, $resolution = self::DEFAULT_RESOLUTION)
+    public function __construct(Pdf $file, Watermark $watermark, $resolution = self::DPI)
     {
         $this->fpdi = new Fpdi();
         $this->totalPages = $this->fpdi->setSourceFile($file->getRealPath());
@@ -116,11 +117,12 @@ class PdfWatermarker implements Watermarker
     protected function watermarkPage($pageNumber, $watermark_visible = true)
     {
         $templateId = $this->fpdi->importPage($pageNumber);
+
         $templateDimension = $this->fpdi->getTemplateSize($templateId);
 
-        $wWidth = ($this->watermark->getWidth() / $this->resolution) * 25.4; //in mm
-        $wHeight = ($this->watermark->getHeight() / $this->resolution) * 25.4; //in mm
+        list($wWidth, $wHeight) = $this->resizeToFit($this->watermark, $templateDimension['width'], $templateDimension['height']);
 
+        // All params in milimeters.
         $watermarkCoords = $this->calculateWatermarkCoordinates(
             $wWidth,
             $wHeight,
@@ -130,11 +132,11 @@ class PdfWatermarker implements Watermarker
 
         if ($watermark_visible) {
             if ($this->asBackground) {
-                $this->fpdi->Image($this->watermark->getFilePath(), $watermarkCoords[0], $watermarkCoords[1], -$this->resolution);
+                $this->fpdi->Image($this->watermark->getFilePath(), $watermarkCoords[0], $watermarkCoords[1], $wWidth, $wHeight); // -$this->resolution);
                 $this->fpdi->useTemplate($templateId);
             } else {
                 $this->fpdi->useTemplate($templateId);
-                $this->fpdi->Image($this->watermark->getFilePath(), $watermarkCoords[0], $watermarkCoords[1], -$this->resolution);
+                $this->fpdi->Image($this->watermark->getFilePath(), $watermarkCoords[0], $watermarkCoords[1], $wWidth, $wHeight); // -$this->resolution);
             }
         } else {
             $this->fpdi->useTemplate($templateId);
@@ -237,5 +239,45 @@ class PdfWatermarker implements Watermarker
     {
         $this->process();
         return $this->fpdi->Output($fileName, 'S');
+    }
+
+    /**
+     * Scale the image to include it inside the container without warping.
+     * @param $watermark watermark image of the Watermark class.
+     * @param $maxWidth maximum width of the container in mm.
+     * @param $maxHeight maximun height of the container in mm.
+     * @return array(width, height) in mm.
+     */
+    public function resizeToFit(Watermark $watermark, $maxWidth, $maxHeight)
+    {
+        $width = $this->pixelsToMM($watermark->getWidth()); // to milimeters
+        $height = $this->pixelsToMM($watermark->getHeight()); // to milimeters
+
+        $widthScale = $maxWidth / $width; // milimeters
+        $heightScale = $maxHeight / $height; // milimeters
+
+        $scale = min($widthScale, $heightScale);
+
+        return array(
+            round($scale * $width),
+            round($scale * $height),
+        );
+    }
+
+    public function rotateImagen($filename, $rotate = false, $degrees = 90)
+    {
+        if ($rotate) {
+            logger('girar');
+            $degrees = $degrees;
+            $image = imagecreatefrompng($filename);
+            imagealphablending($image, false);
+            imagesavealpha($image, true);
+            $imgRotate = imagerotate($image, $degrees, imageColorAllocateAlpha($image, 0, 0, 0, 127));
+            imagealphablending($imgRotate, false);
+            imagesavealpha($imgRotate, true);
+            imagepng($imgRotate, $filename);
+            imagedestroy($image);
+            imagedestroy($imgRotate);
+        }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Support;
+namespace gutti3k\PdfWatermarker\Support;
 
 class Pdf extends \SplFileObject
 {

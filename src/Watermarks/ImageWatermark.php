@@ -1,8 +1,8 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarks;
+namespace gutti3k\PdfWatermarker\Watermarks;
 
-use FilippoToso\PdfWatermarker\Contracts\Watermark;
+use gutti3k\PdfWatermarker\Contracts\Watermark;
 
 class ImageWatermark implements Watermark
 {
@@ -37,8 +37,8 @@ class ImageWatermark implements Watermark
         };
 
         $size = getimagesize($this->tmpFile);
-        $this->width = $size[0];
-        $this->height = $size[1];
+        $this->width = $size[0]; // pixels
+        $this->height = $size[1]; // pixels
     }
 
     /**

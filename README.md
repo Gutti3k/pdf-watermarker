@@ -12,7 +12,7 @@ Using it, you can:
 Installing using composer
 
 ``` bash
-composer require filippo-toso/pdf-watermarker
+composer require gutti3k/pdf-watermarker
 ```
 ## Usage
 

@@ -1,10 +1,11 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarkers;
+namespace gutti3k\PdfWatermarker\Watermarkers;
 
-use FilippoToso\PdfWatermarker\PdfWatermarker as Watermarker;
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidOutputFileException;
-use FilippoToso\PdfWatermarker\Support\Position;
+use gutti3k\PdfWatermarker\PdfWatermarker;
+use gutti3k\PdfWatermarker\Support\Position;
+use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidOutputFileException;
 
 abstract class BaseWatermarketer
 {
@@ -102,8 +103,8 @@ abstract class BaseWatermarketer
      */
     public function pageRange($fromPage, $toPage = null)
     {
-        $this->pageRangeFrom = (int)$fromPage;
-        $this->pageRangeFrom = (int)$toPage;
+        $this->pageRangeFrom = (int) $fromPage;
+        $this->pageRangeFrom = (int) $toPage;
         return $this;
     }
 
@@ -180,5 +181,5 @@ abstract class BaseWatermarketer
         }
     }
 
-    protected abstract function watermarker(): Watermarker;
+    abstract protected function watermarker(): Watermarker;
 }

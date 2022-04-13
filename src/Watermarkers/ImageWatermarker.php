@@ -1,12 +1,12 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarkers;
+namespace gutti3k\PdfWatermarker\Watermarkers;
 
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
-use FilippoToso\PdfWatermarker\Watermarkers\Exceptions\InvalidWatermarkFileException;
-use FilippoToso\PdfWatermarker\PdfWatermarker as Watermarker;
-use FilippoToso\PdfWatermarker\Watermarks\ImageWatermark;
-use FilippoToso\PdfWatermarker\Support\Pdf;
+use gutti3k\PdfWatermarker\Support\Pdf;
+use gutti3k\PdfWatermarker\PdfWatermarker as Watermarker;
+use gutti3k\PdfWatermarker\Watermarks\ImageWatermark;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidInputFileException;
+use gutti3k\PdfWatermarker\Watermarkers\Exceptions\InvalidWatermarkFileException;
 
 class ImageWatermarker extends BaseWatermarketer
 {

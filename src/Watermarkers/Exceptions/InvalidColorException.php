@@ -1,6 +1,6 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarkers\Exceptions;
+namespace gutti3k\PdfWatermarker\Watermarkers\Exceptions;
 
 use Exception;
 

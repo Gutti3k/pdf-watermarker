@@ -1,6 +1,6 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Contracts;
+namespace gutti3k\PdfWatermarker\Contracts;
 
 interface Watermark
 {

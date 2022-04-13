@@ -1,8 +1,8 @@
 <?php
 
-namespace FilippoToso\PdfWatermarker\Watermarks;
+namespace gutti3k\PdfWatermarker\Watermarks;
 
-use FilippoToso\PdfWatermarker\Contracts\Watermark;
+use gutti3k\PdfWatermarker\Contracts\Watermark;
 
 class TextWatermark implements Watermark
 {
@@ -17,7 +17,7 @@ class TextWatermark implements Watermark
     /**
      * Create a text watermark
      *
-     * @param string $text The text that will be rendered 
+     * @param string $text The text that will be rendered
      * @param string $font The path of the TTF font file
      * @param integer $size The font size
      * @param integer $angle The angle of the text
@@ -63,11 +63,11 @@ class TextWatermark implements Watermark
 
         // Add  px of padding to avoid cropping
         return [
-            'left'   => abs($minX) + static::PADDING,
-            'top'    => abs($minY) + static::PADDING,
-            'width'  => $maxX - $minX + static::PADDING * 2,
-            'height' => $maxY - $minY + static::PADDING * 2,
-            'box'    => $rect
+            'left' => abs($minX)+static::PADDING,
+            'top' => abs($minY)+static::PADDING,
+            'width' => $maxX - $minX+static::PADDING * 2,
+            'height' => $maxY - $minY+static::PADDING * 2,
+            'box' => $rect,
         ];
     }
 
