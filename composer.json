@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "gutti3k\\PdfWatermarker\\": "src"
+            "Gutti3k\\PdfWatermarker\\": "src"
         }
     },
     "extra": {
