@@ -2,7 +2,7 @@
 
 namespace Gutti3k\PdfWatermarker\Contracts;
 
-use FilippoToso\PdfWatermarker\Support\Position;
+use Gutti3k\PdfWatermarker\Support\Position;
 
 interface Watermarker
 {
